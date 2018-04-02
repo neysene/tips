@@ -1,0 +1,33 @@
+<div class="container w-75 mx-auto mt-3">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Odd</span>
+    </div>
+    <input type="number" class="form-control" placeholder="Ex. 1.50" step="0.01" min="1" aria-label="Odd" aria-describedby="basic-addon1" #oddValue>
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Pick</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Ex. QPR to win" aria-label="Pick" aria-describedby="basic-addon1" #newPick>
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Bookie</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Ex. Tempobet" aria-label="Bookie" aria-describedby="basic-addon1" #bookie>
+  </div>
+  <button type="button" class="btn btn-primary btn-lg" (click)="AddTip(bookie, newPick, oddValue)">Add Tip</button>
+</div>
+<hr>
+<div class="card text-white bg-secondary mb-3 mx-auto w-50" *ngFor="let tip of tips">
+  <div class="card-header">{{ tip.sportsbook }}</div>
+  <div class="card-body">
+    <h4 class="card-title">{{ tip.pick }} @ {{ tip.odd }}</h4>
+    <p class="card-text">Tipster: {{ tip.user }}</p>
+    <p class="card-text">Date: {{ tip.playAt | date: 'EEEE, MMMM d, y - HH:mm'}}</p>
+    <button type="button" class="btn btn-success mr-1" (click)="UpdateVoteCount(tip, 0)">Tutar ({{ tip.voteCount[0] }})</button>
+    <button type="button" class="btn btn-danger" (click)="UpdateVoteCount(tip, 1)">Yatar ({{ tip.voteCount[1] }})</button>
+    <button type="button" class="btn btn-warning float-right" (click)="RemoveTip(tip)">Sil</button>
+  </div>
+</div>

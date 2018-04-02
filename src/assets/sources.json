@@ -1,0 +1,26 @@
+[
+  {
+    "id": "bbc-sport",
+    "name": "BBC News"
+  },
+  {
+    "id": "four-four-two",
+    "name": "FourFourTwo"
+  },
+  {
+    "id": "espn",
+    "name": "ESPN"
+  },
+  {
+    "id": "football-italia",
+    "name": "Football Italia"
+  },
+  {
+    "id": "the-sport-bible",
+    "name": "The Sport Bible"
+  },
+  {
+    "id": "bleacher-report",
+    "name": "Bleacher Report"
+  }
+]

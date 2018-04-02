@@ -1,0 +1,10 @@
+<div *ngIf="articles">
+  <div *ngFor="let art of articles.articles">
+    <a href="{{ art.url }}">
+      <h3>{{ art.title }}</h3>
+      <p>{{ art.description }}</p>
+    </a>
+  </div>
+</div>
+
+<button type="button" class="btn btn-primary btn-lg" (click)="GetNews()">Get</button>

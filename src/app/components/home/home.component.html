@@ -1,0 +1,19 @@
+<div class="card text-white bg-secondary mb-3 mx-auto col-md-6 col-sm-9" *ngFor="let tip of tips">
+  <div class="card-header">{{ tip.sportsbook }}</div>
+  <div class="card-body">
+    <h4 class="card-title">{{ tip.pick }} @ {{ tip.odd }}</h4>
+    <p class="card-text">Tipster: {{ tip.user }}</p>
+    <p class="card-text">Date: {{ tip.playAt | date: 'EEEE, MMMM d, y - HH:mm'}}</p>
+    <div class="row ml-1">
+      <span class="badge badge-pill badge-primary mr-1 mb-1" *ngFor="let tag of tip.tags">
+        {{ tag }}
+      </span>
+    </div>
+  </div>
+  <div class="card-footer">
+    <button type="button" class="btn btn-success mr-1" (click)="UpdateVoteCount(tip, 0)">Tutar ({{ tip.voteCount[0] }})</button>
+    <button type="button" class="btn btn-danger" (click)="UpdateVoteCount(tip, 1)">Yatar ({{ tip.voteCount[1] }})</button>
+    <button type="button" class="btn btn-warning float-right ml-1" (click)="RemoveTip(tip)">Sil</button>
+    <button type="button" class="btn btn-info float-right" routerLink="edit">Edit</button>
+  </div>
+</div>

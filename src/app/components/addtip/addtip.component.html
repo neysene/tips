@@ -1,0 +1,76 @@
+<div class="container mb-3">
+  <div class="col-md-8 offset-md-2">
+    <span class="anchor" id="formUserEdit"></span>
+    <hr class="my-3">
+
+    <!-- form user info -->
+    <div class="card card-outline-secondary">
+      <div class="card-header">
+        <h3 class="mb-0">Tip Information</h3>
+      </div>
+      <div class="card-body">
+        <form class="form" role="form" autocomplete="off">
+          <div class="form-group row">
+            <label class="col-lg-3 col-form-label form-control-label">Username</label>
+            <div class="col-lg-9">
+              <input type="text" readonly class="form-control-plaintext" #username value="gofs">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-3 col-form-label form-control-label">Pick</label>
+            <div class="col-lg-9">
+              <input class="form-control" type="text" placeholder="Ex. QPR to win" #newPick>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-3 col-form-label form-control-label">Odd</label>
+            <div class="col-lg-9">
+              <input type="number" class="form-control" placeholder="Ex. 1.50" step="0.01" min="1" aria-label="Odd" aria-describedby="basic-addon1"
+                #oddValue>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-3 col-form-label form-control-label">Bookie</label>
+            <div class="col-lg-9">
+              <input class="form-control" type="text" placeholder="Ex. Pinnacle" #bookie>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-3 col-form-label form-control-label">Date</label>
+            <div class="col-lg-9">
+              <input type="date" value="2013-01-08">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-3 col-form-label form-control-label">Time</label>
+            <div class="col-lg-9">
+              <input type="time" name="usr_time">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-3 col-form-label form-control-label">Time Zone</label>
+            <div class="col-lg-9">
+              <select id="user_time_zone" class="form-control" size="0">
+                <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                <option value="Alaska">(GMT-09:00) Alaska</option>
+                <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                <option value="Arizona">(GMT-07:00) Arizona</option>
+                <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
+                <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-3 col-form-label form-control-label"></label>
+            <div class="col-lg-9">
+              <button type="button" class="btn btn-success" (click)="AddTip(bookie, newPick, oddValue)">Save</button>
+              <button type="button" class="btn btn-warning">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
